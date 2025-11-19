@@ -1,9 +1,0 @@
-bin/
-obj/
-*.db
-*.log
-*.user
-*.suo
-.vscode/
-appsettings*.json
-.env
