@@ -1,71 +1,67 @@
-# 📌 ToDoListApp — API REST em .NET 8
+📌 ToDoListApp — API REST em .NET 8
 
-Uma API REST simples e moderna para gerenciamento de tarefas (To-Do), desenvolvida em **ASP.NET Core 8**, utilizando Entity Framework Core, Migrations, injeção de dependência e boas práticas de organização de código.  
+Uma API REST simples e moderna para gerenciamento de tarefas (To-Do), desenvolvida em ASP.NET Core 8, utilizando Entity Framework Core, Migrations, Injeção de Dependência e boas práticas de organização de código.
 Ideal para estudos, portfólio e demonstração de arquitetura limpa para pequenos serviços.
 
----
+🚀 Tecnologias Utilizadas
 
-## 🚀 Tecnologias Utilizadas
+.NET 8 (ASP.NET Core Web API)
 
-- **.NET 8 (ASP.NET Core Web API)**
-- **Entity Framework Core (Code-First)**
-- **SQLite / SQL Server (configurável)**
-- **JWT (JSON Web Token) – estrutura preparada**
-- **Swagger / OpenAPI**
-- **Autenticação e Serviços com Injeção de Dependência**
-- **Migrations**
+Entity Framework Core (Code-First)
 
----
+SQLite / SQL Server (configurável)
 
-## 🗂️ Estrutura do Projeto
+JWT (JSON Web Token) – estrutura preparada
 
+Swagger / OpenAPI
+
+Injeção de Dependência
+
+Migrations (EF Core)
+
+🗂️ Estrutura do Projeto
 ToDoListApp/
 │
 ├── Controllers/
-│ └── TodoController.cs → Endpoints da API
+│   └── TodoController.cs        → Endpoints da API
 │
 ├── Data/
-│ ├── TodoContext.cs → DbContext (EF Core)
-│ └── TodoContextFactory.cs → Suporte a migrations
+│   ├── TodoContext.cs           → DbContext (EF Core)
+│   └── TodoContextFactory.cs    → Suporte a migrations
 │
-├── Migrations/ → Histórico de migrations EF
+├── Migrations/                  → Histórico de migrations EF
 │
 ├── Models/
-│ ├── TodoItem.cs → Modelo principal
-│ └── DateTimeConverter.cs → Conversão automática de datas
+│   ├── TodoItem.cs              → Modelo principal
+│   └── DateTimeConverter.cs     → Conversão automática de datas
 │
 ├── Services/
-│ └── TodoServices.cs → Lógica de negócios
+│   └── TodoServices.cs          → Lógica de negócios
 │
-├── appsettings.json → Configurações gerais
-├── Program.cs → Configuração da aplicação
-└── ToDoListApp.csproj → Definições do projeto
+├── appsettings.json             → Configurações gerais
+├── Program.cs                   → Configuração da aplicação
+└── ToDoListApp.csproj           → Configuração do projeto
 
-## ⚙️ Como Executar o Projeto
-
-### 🔧 **1. Clonar o repositório**
-```bash
+⚙️ Como Executar o Projeto
+🔧 1. Clonar o repositório
 git clone https://github.com/Wellington-Roveder/ToDoListApp.git
 cd ToDoListApp
 
-
-2- Configure a string de conexão com User Secrets:
+🔐 2. Configure a string de conexão com User Secrets
 dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost;Database=ToDoListDb;User=root;Password=senha;"
 
-3. Restaurar dependências
-Bash
+📦 3. Restaurar dependências
 dotnet restore
-4 🗄️ . Executar Migrations (opcional, caso use SQLite/SQL Server)
-bash
+
+🗄️ 4. Executar Migrations
 dotnet ef database update
 
-▶ 4. Rodar a aplicação
-bash
+▶ 5. Rodar a aplicação
 dotnet run
-O Swagger estará disponível em:
-http://localhost:5149/swagger
+Acesse o Swagger em:
 
-Endpoints Disponíveis
+👉 http://localhost:5149/swagger
+📡 Endpoints Disponíveis
 ➤ GET /api/todo
 
 Retorna todas as tarefas.
@@ -96,19 +92,19 @@ Remove uma tarefa.
 
 🔒 Segurança
 
-O projeto já possui estrutura preparada para:
+O projeto possui estrutura preparada para:
 
-Injeção de chave JWT via appsettings.json
+Chave JWT via appsettings.json
 
-Autenticação com tokens
+Autenticação baseada em token
 
 Permissão de endpoints protegidos
 
-A chave JWT não é enviada para o Git graças ao .gitignore.
+.gitignore impedindo que chaves sensíveis vazem no repositório
 
 🧹 Boas Práticas Implementadas
 
-✔ .gitignore configurado (bin/ obj/ appsettings* .env)
+✔ .gitignore configurado (bin/, obj/, appsettings*, .env)
 ✔ Estrutura por camadas (Controllers → Services → Data → Models)
 ✔ Program.cs limpo e organizado
 ✔ Uso de Dependency Injection
@@ -120,6 +116,6 @@ A chave JWT não é enviada para o Git graças ao .gitignore.
 
 Wellington Roveder
 Desenvolvedor .NET & apaixonado por tecnologia
-https://www.linkedin.com/in/wellington-roveder-04637b37b/
+🔗 https://www.linkedin.com/in/wellington-roveder-04637b37b
 
 
