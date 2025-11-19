@@ -1,0 +1,121 @@
+📌 ToDoListApp — REST API in .NET 8
+
+A simple and modern REST API for task management (To-Do), built with ASP.NET Core 8, using Entity Framework Core, Migrations, Dependency Injection, and clean project structure.
+Ideal for learning, portfolio demonstration, and showcasing clean architecture for small services.
+
+🚀 Technologies Used
+
+.NET 8 (ASP.NET Core Web API)
+
+Entity Framework Core (Code-First)
+
+SQLite / SQL Server (configurable)
+
+JWT (JSON Web Token) – structure ready for authentication
+
+Swagger / OpenAPI
+
+Dependency Injection
+
+EF Core Migrations
+
+🗂️ Project Structure
+ToDoListApp/
+│
+├── Controllers/
+│   └── TodoController.cs          → API endpoints
+│
+├── Data/
+│   ├── TodoContext.cs             → DbContext (EF Core)
+│   └── TodoContextFactory.cs      → Migration support
+│
+├── Migrations/                    → EF Core migration history
+│
+├── Models/
+│   ├── TodoItem.cs                → Main Domain Model
+│   └── DateTimeConverter.cs       → Automatic date parsing
+│
+├── Services/
+│   └── TodoServices.cs            → Business logic layer
+│
+├── appsettings.json               → General configuration
+├── Program.cs                     → Application setup
+└── ToDoListApp.csproj             → Project definition
+
+⚙️ How to Run the Project
+🔧 1. Clone the repository
+git clone https://github.com/Wellington-Roveder/ToDoListApp.git
+cd ToDoListApp
+
+🔑 2. Set your connection string using User Secrets
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=localhost;Database=ToDoListDb;User=root;Password=your_password;"
+
+📦 3. Restore dependencies
+dotnet restore
+
+🗄️ 4. Apply EF Migrations
+dotnet ef database update
+
+▶ 5. Run the application
+dotnet run
+
+Swagger UI will be available at:
+
+http://localhost:5149/swagger
+
+📡 Available Endpoints
+➤ GET /api/todo
+
+Returns all tasks.
+
+➤ GET /api/todo/{id}
+
+Returns a specific task.
+
+➤ POST /api/todo
+
+Creates a new task.
+
+JSON Example:
+
+{
+  "title": "Study .NET",
+  "description": "Practice Web API and EF Core",
+  "isCompleted": false
+}
+
+➤ PUT /api/todo/{id}
+
+Updates an existing task.
+
+➤ DELETE /api/todo/{id}
+
+Deletes a task.
+
+🔒 Security
+
+The project is prepared for:
+
+JWT authentication structure
+
+Secure injection of JWT keys via appsettings.json
+
+Protected endpoints (when authentication is enabled)
+
+No sensitive data is committed — .gitignore blocks appsettings*, .env, etc.
+
+🧹 Best Practices Implemented
+
+✔ Proper .gitignore setup (bin/, obj/, appsettings*, .env)
+✔ Clean architecture (Controllers → Services → Data → Models)
+✔ Clean and organized Program.cs
+✔ Dependency Injection everywhere
+✔ Migration structure in place
+✔ Zero sensitive files committed
+✔ Code style suitable for portfolio
+
+👨‍💻 Author
+
+Wellington Roveder
+.NET Developer & technology enthusiast
+LinkedIn: https://www.linkedin.com/in/wellington-roveder-04637b37b/
